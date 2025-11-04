@@ -1,4 +1,10 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
-import { AuthGuard } from './auth.guard';
+import { Login } from './login/login';
+import { Vehicles } from './vehicles/vehicles';
+import { authGuard } from './auth-guard';
+
+export const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: Login },
+  { path: 'vehicles', component: Vehicles, canActivate: [authGuard] },
+];

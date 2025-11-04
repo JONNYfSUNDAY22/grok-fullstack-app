@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
-  private apiUrl = 'https://jonnyfsunday22.pythonanywhere.com/api/vehicles/';
 
   constructor(private http: HttpClient) {}
 
   getVehicles(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(`${environment.apiUrl}/vehicles/`);
   }
 
   createVehicle(vehicle: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, vehicle);
+    return this.http.post<any>(`${environment.apiUrl}/vehicles/`, vehicle);
   }
 
   updateVehicle(id: number, vehicle: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${id}/`, vehicle);
+    return this.http.put<any>(`${environment.apiUrl}/vehicles/${id}/`, vehicle);
   }
 
   deleteVehicle(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}${id}/`);
+    return this.http.delete<any>(`${environment.apiUrl}/vehicles/${id}/`);
   }
 }
