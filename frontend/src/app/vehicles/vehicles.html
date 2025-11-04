@@ -30,28 +30,29 @@
 <form (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>Make</mat-label>
-    <input matInput [(ngModel)]="vehicle.make" name="make" required>
+    <input matInput [(ngModel)]="currentVehicle.make" name="make" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Model</mat-label>
-    <input matInput [(ngModel)]="vehicle.model" name="model" required>
+    <input matInput [(ngModel)]="currentVehicle.model" name="model" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Year</mat-label>
-    <input matInput type="number" [(ngModel)]="vehicle.year" name="year" required>
+    <input matInput type="number" [(ngModel)]="currentVehicle.year" name="year" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Plate</mat-label>
-    <input matInput [(ngModel)]="vehicle.plate" name="plate" required>
+    <input matInput [(ngModel)]="currentVehicle.plate" name="plate" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>VIN</mat-label>
-    <input matInput [(ngModel)]="vehicle.vin" name="vin" required>
+    <input matInput [(ngModel)]="currentVehicle.vin" name="vin" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
-    <input matInput [(ngModel)]="vehicle.status" name="status" required>
+    <input matInput [(ngModel)]="currentVehicle.status" name="status" required>
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit">Save</button>
-  <button mat-raised-button color="warn" type="button" (click)="onDelete()" *ngIf="vehicle.id">Delete</button>
+  <button mat-raised-button color="warn" type="button" (click)="onDelete()" *ngIf="currentVehicle.id">Delete</button>
+  <button mat-raised-button color="accent" type="button" (click)="addNew()">Add New</button>
 </form>

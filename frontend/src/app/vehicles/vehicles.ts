@@ -16,7 +16,8 @@ import { VehicleService } from '../vehicle.service';
 export class Vehicles implements OnInit {
   vehicles: any[] = [];
   displayedColumns: string[] = ['make', 'model', 'year', 'plate', 'vin', 'status'];
-  vehicle: any = {};
+  currentVehicle: any = {};
+  editMode: boolean = false;
 
   constructor(private vehicleService: VehicleService) {}
 
@@ -31,25 +32,34 @@ export class Vehicles implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.vehicle.id) {
-      this.vehicleService.updateVehicle(this.vehicle.id, this.vehicle).subscribe(() => {
+    if (this.editMode) {
+      this.vehicleService.updateVehicle(this.currentVehicle.id, this.currentVehicle).subscribe(() => {
         this.loadVehicles();
-        this.vehicle = {};
+        this.resetForm();
       });
     } else {
-      this.vehicleService.createVehicle(this.vehicle).subscribe(() => {
+      this.vehicleService.createVehicle(this.currentVehicle).subscribe(() => {
         this.loadVehicles();
-        this.vehicle = {};
+        this.resetForm();
       });
     }
   }
 
   onDelete(): void {
-    if (this.vehicle.id) {
-      this.vehicleService.deleteVehicle(this.vehicle.id).subscribe(() => {
+    if (this.currentVehicle.id) {
+      this.vehicleService.deleteVehicle(this.currentVehicle.id).subscribe(() => {
         this.loadVehicles();
-        this.vehicle = {};
+        this.resetForm();
       });
     }
+  }
+
+  resetForm(): void {
+    this.currentVehicle = {};
+    this.editMode = false;
+  }
+
+  addNew(): void {
+    this.resetForm();
   }
 }

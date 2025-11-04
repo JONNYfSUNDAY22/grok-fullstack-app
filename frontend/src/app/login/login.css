@@ -1,9 +1,9 @@
-:host {
-  background-color: lightgrey;
+.mat-card {
+  background: white;
+  color: black;
+  border: thin black solid;
 }
 
-mat-card {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+body {
+  background: lightgrey;
 }
