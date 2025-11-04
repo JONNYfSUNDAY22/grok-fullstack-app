@@ -132,6 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://grok-fullstack-app.netlify.app',
+    'http://localhost:4200',
 ]
 
 CORS_ALLOW_HEADERS = ['*']
