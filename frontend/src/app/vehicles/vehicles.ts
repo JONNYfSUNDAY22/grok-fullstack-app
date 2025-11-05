@@ -3,13 +3,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'app-vehicles',
   standalone: true,
-  imports: [MatTableModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule],
+  imports: [MatTableModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, FormsModule],
   templateUrl: './vehicles.html',
   styleUrl: './vehicles.css',
 })

@@ -1,0 +1,31 @@
+mat-card {
+  background: white;
+  border: thin black solid;
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.subscribe-card .company-section {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.subscribe-card .personal-section {
+  padding-top: 20px;
+}
+
+mat-form-field {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+body {
+  background: lightgrey;
+}

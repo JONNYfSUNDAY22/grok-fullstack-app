@@ -25,7 +25,7 @@ export class Login {
   onSubmit() {
     this.auth.login({ username: this.username, password: this.password }).subscribe({
       next: () => {
-        this.router.navigate(['/vehicles']);
+        this.router.navigate(['/']);
       },
       error: () => {
         alert('Login failed');

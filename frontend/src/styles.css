@@ -1,17 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-$theme: mat.define-theme((
-  color: (
-    theme-types: (light: true, dark: true),
-    primary-color: cyan,
-    accent-color: orange
-  )
-));
+/* Override label colors to ensure visibility */
+.mat-mdc-form-field-label {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
 
-html {
-  @include mat.all-component-colors($theme);
+.mat-mdc-form-field-required-marker {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-label {
+  color: #3f51b5 !important;
+}
+
+.mat-mdc-raised-button {
+  background-color: #3f51b5 !important;
+  color: white !important;
+}
+
+.mat-mdc-raised-button.mat-accent {
+  background-color: #ff4081 !important;
+  color: white !important;
 }
 
 @media (max-width: 600px) {
