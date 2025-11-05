@@ -3,8 +3,11 @@
 @use '@angular/material' as mat;
 
 $theme: mat.define-theme((
-  primary-color: #00b8d4,
-  accent-color: #f57c00
+  color: (
+    theme-types: (light: true, dark: true),
+    primary-color: cyan,
+    accent-color: orange
+  )
 ));
 
 html {

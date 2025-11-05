@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { CompanyService } from '../company';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-member-subscribe',
   standalone: true,
   imports: [
     CommonModule,
@@ -24,10 +24,10 @@ import { CompanyService } from '../company';
     MatNativeDateModule,
     FormsModule,
   ],
-  templateUrl: './register.html',
-  styleUrl: './register.css',
+  templateUrl: './member-subscribe.component.html',
+  styleUrl: './member-subscribe.component.css',
 })
-export class Register implements OnInit {
+export class MemberSubscribeComponent implements OnInit {
   user: any = {};
   confirmPassword: string = '';
   companies: any[] = [];
