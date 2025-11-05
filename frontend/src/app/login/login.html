@@ -7,8 +7,13 @@
       <input matInput placeholder="Username" [(ngModel)]="username">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Password" type="password" [(ngModel)]="password">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+    <p>New user? <a routerLink="/register">Register here</a></p>
   </mat-card-content>
 </mat-card>

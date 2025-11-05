@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+$theme: mat.define-theme((
+  primary-color: #00b8d4,
+  accent-color: #f57c00
+));
+
+html {
+  @include mat.all-component-colors($theme);
+}
+
+@media (max-width: 600px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  mat-form-field {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1025px) {
+  mat-form-field {
+    width: 50%;
+  }
+}
