@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="login-card">
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
   </mat-card-header>
@@ -13,7 +13,7 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+    <button mat-raised-button color="accent" (click)="onSubmit()">Login</button>
     <p>New user? <a routerLink="/member-subscribe">MemberSubscribe</a></p>
   </mat-card-content>
 </mat-card>

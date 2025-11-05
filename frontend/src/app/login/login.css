@@ -1,9 +1,14 @@
-.mat-card {
+.login-card {
   background: white;
-  color: black;
   border: thin black solid;
+  padding: 20px;
 }
 
 body {
   background: lightgrey;
+}
+
+mat-button {
+  background: orange;
+  color: cyan;
 }
